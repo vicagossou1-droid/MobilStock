@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Disallow: /app
+Disallow: /app/
+Disallow: /stock
+Disallow: /vente
+Disallow: /historique
+Disallow: /compatibilites
+Disallow: /statistiques
+Disallow: /utilisateurs
+Disallow: /parametres
+Disallow: /profil
+
+Sitemap: https://stock.saeicubetech.com/sitemap.xml
