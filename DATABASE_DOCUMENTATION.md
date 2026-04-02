@@ -1,6 +1,6 @@
-# 🗄️ MobilStock Database Architecture
+# MobilStock Database Architecture
 
-## 📋 Table of Contents
+## Table of Contents
 
 1. [Overview](#overview)
 2. [Multi-Tenant Design](#multi-tenant-design)
@@ -973,11 +973,11 @@ WHERE total_amount != (
 
 This schema is:
 
-✅ **Scalable:** Handles multi-tenant SaaS growth  
-✅ **Secure:** Role-based, isolated by boutique_id  
-✅ **Auditable:** Full change tracking  
-✅ **Atomic:** Transactions prevent data corruption  
-✅ **Fast:** Strategic indexes & denormalization  
-✅ **Simple:** 17 tables; clear relationships  
+**Scalable:** Handles multi-tenant SaaS growth  
+**Secure:** Role-based, isolated by boutique_id  
+**Auditable:** Full change tracking  
+**Atomic:** Transactions prevent data corruption  
+**Fast:** Strategic indexes & denormalization  
+**Simple:** 17 tables; clear relationships  
 
-Ready for production deployment. 🚀
+Ready for production deployment.

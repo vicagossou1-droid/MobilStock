@@ -1,12 +1,12 @@
-# 🗄️ MobilStock Database & Backend Architecture
+# MobilStock Database & Backend Architecture
 
 > Comprehensive PostgreSQL SaaS database design for multi-tenant phone repair shop management.
 
 ---
 
-## 📚 Documentation Structure
+## Documentation Structure
 
-### 1. **[DATABASE_SCHEMA.sql](DATABASE_SCHEMA.sql)** ⚙️
+### 1. **[DATABASE_SCHEMA.sql](DATABASE_SCHEMA.sql)** 
 **What:** Production-ready PostgreSQL schema  
 **Contains:**
 - 16 tables with all relationships
@@ -23,16 +23,16 @@ psql your_db < DATABASE_SCHEMA.sql
 
 ---
 
-### 2. **[DATABASE_DOCUMENTATION.md](DATABASE_DOCUMENTATION.md)** 📖
+### 2. **[DATABASE_DOCUMENTATION.md](DATABASE_DOCUMENTATION.md)** 
 **What:** Complete reference documentation  
 **Sections:**
-- 🎯 Overview & Design Principles
-- 💼 Multi-Tenant Architecture
-- 📊 Detailed table documentation (16 tables)
-- 🔗 Relationships & ERD
-- 📈 Indexes & Query Optimization
-- 🔒 Security & Isolation
-- 🧪 Maintenance & Performance Benchmarks
+-  Overview & Design Principles
+-  Multi-Tenant Architecture
+-  Detailed table documentation (16 tables)
+-  Relationships & ERD
+-  Indexes & Query Optimization
+-  Security & Isolation
+-  Maintenance & Performance Benchmarks
 
 **Use Cases:**
 - Understand why each table exists
@@ -42,7 +42,7 @@ psql your_db < DATABASE_SCHEMA.sql
 
 ---
 
-### 3. **[MIGRATION_GUIDE.md](MIGRATION_GUIDE.md)** 🔄
+### 3. **[MIGRATION_GUIDE.md](MIGRATION_GUIDE.md)** 
 **What:** Step-by-step migration from frontend to backend  
 **Phases:**
 1. Database setup
@@ -56,7 +56,7 @@ psql your_db < DATABASE_SCHEMA.sql
 
 ---
 
-## 🗂️ Table Structure Overview
+## Table Structure Overview
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -100,7 +100,7 @@ psql your_db < DATABASE_SCHEMA.sql
 
 ---
 
-## 🔑 Key Design Decisions
+##  Key Design Decisions
 
 ### Multi-Tenancy
 - **Architecture:** Single database, `boutique_id` filtering
@@ -133,7 +133,7 @@ psql your_db < DATABASE_SCHEMA.sql
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Step 1: Create Database
 ```bash
@@ -167,7 +167,7 @@ Run [migration script](MIGRATION_GUIDE.md#32-migration-script-nodejs) to import 
 
 ---
 
-## 📊 Common Queries
+##  Common Queries
 
 ### Admin Dashboard
 
@@ -207,7 +207,7 @@ ORDER BY total_revenue DESC;
 
 ---
 
-## 🔒 Security Checklist
+##  Security Checklist
 
 - [ ] All passwords hashed with bcrypt (rounds=12)
 - [ ] JWT tokens with 7-day expiry
@@ -222,7 +222,7 @@ ORDER BY total_revenue DESC;
 
 ---
 
-## 📈 Performance Optimization
+## Performance Optimization
 
 ### Index Strategy
 - Composite indexes on `(boutique_id, date)` for range queries
@@ -255,7 +255,7 @@ WHERE sale_date = '2025-03-24';
 
 ---
 
-## 🧪 Testing Strategy
+##  Testing Strategy
 
 ### Unit Tests (API endpoints)
 ```bash
@@ -282,7 +282,7 @@ artillery run load-test.yml
 
 ---
 
-## 📋 Maintenance
+##  Maintenance
 
 ### Daily
 ```sql
@@ -306,7 +306,7 @@ DELETE FROM audit_logs WHERE created_at < NOW() - INTERVAL '2 years';
 
 ---
 
-## 🆘 Troubleshooting
+##  Troubleshooting
 
 ### Foreign Key Constraint Error
 ```
@@ -333,7 +333,7 @@ DELETE FROM audit_logs WHERE created_at < NOW() - INTERVAL '1 year';
 
 ---
 
-## 📚 Related Documentation
+##  Related Documentation
 
 - **Frontend:** See `src/README.md` (React + TypeScript)
 - **API Docs:** See `backend/API.md` (Postman collection)
@@ -342,7 +342,7 @@ DELETE FROM audit_logs WHERE created_at < NOW() - INTERVAL '1 year';
 
 ---
 
-## 📞 Support
+##  Support
 
 **Found an issue?**
 1. Check [DATABASE_DOCUMENTATION.md](DATABASE_DOCUMENTATION.md)
@@ -352,7 +352,7 @@ DELETE FROM audit_logs WHERE created_at < NOW() - INTERVAL '1 year';
 
 ---
 
-## ✅ Deployment Checklist
+##  Deployment Checklist
 
 - [ ] PostgreSQL 12+ installed
 - [ ] Database created
@@ -371,4 +371,4 @@ DELETE FROM audit_logs WHERE created_at < NOW() - INTERVAL '1 year';
 
 **Version:** 1.0  
 **Last Updated:** March 2025  
-**Status:** 🟢 Production Ready
+**Status:** Production Ready

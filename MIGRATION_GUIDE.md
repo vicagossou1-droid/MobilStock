@@ -1,17 +1,17 @@
-# 🔄 MIGRATION GUIDE: Frontend → PostgreSQL Backend
+# MIGRATION GUIDE: Frontend → PostgreSQL Backend
 
 This guide walks through migrating MobilStock from in-memory Zustand store to PostgreSQL.
 
 ---
 
-## 📋 Overview
+## Overview
 
 **Before:** All data in-memory (Zustand store) → Lost on page refresh  
 **After:** Persistent PostgreSQL backend with API
 
 ---
 
-## 🚀 PHASE 1: Setup & Preparation
+## PHASE 1: Setup & Preparation
 
 ### 1.1 Create PostgreSQL Database
 
@@ -60,7 +60,7 @@ client.query('SELECT NOW()', (err, res) => {
 
 ---
 
-## 🏗️ PHASE 2: Backend API Setup
+## PHASE 2: Backend API Setup
 
 ### 2.1 Create Express API
 
@@ -339,7 +339,7 @@ app.listen(PORT, () => {
 
 ---
 
-## 📦 PHASE 3: Data Migration Script
+## PHASE 3: Data Migration Script
 
 ### 3.1 Export Data from Zustand Store
 
@@ -577,11 +577,11 @@ async function migrate() {
     }
     
     await client.query('COMMIT');
-    console.log('\n✅ Migration completed successfully!');
+    console.log('\n Migration completed successfully!');
     
   } catch (err) {
     await client.query('ROLLBACK');
-    console.error('❌ Migration failed:', err);
+    console.error(' Migration failed:', err);
     process.exit(1);
   } finally {
     client.release();
@@ -599,7 +599,7 @@ node backend/scripts/migrate-from-frontend.js
 
 ---
 
-## 🔗 PHASE 4: Connect Frontend to Backend
+##  PHASE 4: Connect Frontend to Backend
 
 ### 4.1 Create API Client (Axios/Fetch)
 
@@ -758,7 +758,7 @@ export const useAppStore = create<AppState>((set) => ({
 
 ---
 
-## 🧪 PHASE 5: Testing
+## PHASE 5: Testing
 
 ### 5.1 API Testing (Postman / REST Client)
 
@@ -802,7 +802,7 @@ Content-Type: application/json
 
 ---
 
-## ✅ PHASE 6: Post-Migration Validation
+## PHASE 6: Post-Migration Validation
 
 ### 6.1 Verify Data Integrity
 
@@ -868,7 +868,7 @@ artillery run load-test.yml
 
 ---
 
-## 📋 Rollback Plan
+## Rollback Plan
 
 If something goes wrong:
 
@@ -884,7 +884,7 @@ psql mobilstock_prod < backup_before_migration.sql
 
 ---
 
-## 🎉 Summary
+## Summary
 
 | Phase | Status | Timeline |
 |-------|--------|----------|
@@ -895,4 +895,4 @@ psql mobilstock_prod < backup_before_migration.sql
 | 5. Testing | ✅ Validated | 2 hours |
 | **TOTAL** | ✅ **COMPLETE** | **~12 hours** |
 
-Next: Deploy to production 🚀
+Next: Deploy to production
